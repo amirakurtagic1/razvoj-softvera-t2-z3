@@ -1,6 +1,7 @@
 package ba.unsa.etf.tutorijal2;
 
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
@@ -11,6 +12,17 @@ public class Controller {
 
     public void OnClick(ActionEvent actionEvent) {
 
+        if(Recenica.getText().isEmpty())
+        {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Warning Dialog");
+            alert.setHeaderText("Problem učitavanja rečenice!");
+            alert.setContentText("Niste unijeli odgovarajući tekst!");
+
+            alert.showAndWait();
+
+
+        }
         String s = new String();
         String nova_rijec = new String();
         s = Recenica.getText();
